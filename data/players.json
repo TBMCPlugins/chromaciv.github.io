@@ -1,0 +1,19 @@
+{
+  "players" : [
+    {
+      "name": "Ali",
+      "color": "blue",
+      "permissions": ["mod", "dev", "op"]
+    },
+    {
+      "name": "Byz",
+      "color": "grey",
+      "permissions": ["builder"]
+    },
+    {
+      "name": "iie",
+      "color": "red",
+      "permissions" : ["admin", "mod", "dev", "op"]
+    }
+  ]
+}
