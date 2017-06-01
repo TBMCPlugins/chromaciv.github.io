@@ -3,7 +3,16 @@ https://www.youtube.com/watch?v=h0ZUpPiV1ac
 */
 
 window.onload = function(){
+  $.get("./data/players.json", function(data){
+    console.log(data);
+    document.getElementById('atom-players').innerHTML = JSON.stringify(data);
+  });
 
+  $.get("http://server.figytuna.com:8080/ali", function(data){
+    console.log(data);
+    document.getElementById('button-hello').innerHTML = data;
+  });
+  /*
   let http = new XMLHttpRequest();
 
   http.onreadystatechange = function(){
@@ -21,6 +30,7 @@ window.onload = function(){
   const isASYNC = true;
   http.open(method, filepath, isASYNC);
   http.send();
+  */
 
 }
 
