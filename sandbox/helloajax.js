@@ -8,7 +8,7 @@ window.onload = function(){
     document.getElementById('atom-players').innerHTML = JSON.stringify(data);
   });
 
-  $.get("http://server.figytuna.com:8080/ali", function(data){
+  $.get("http://server.figytuna.com:443/ali", function(data){
     console.log(data);
     document.getElementById('button-hello').innerHTML = data;
   });
