@@ -17,7 +17,7 @@ window.onload = function(){
   });
   $.get("https://server.figytuna.com:8080/ali/hello/players", function(data){
     document.getElementById('hello-players').innerHTML = data;
-  }
+  });
   /*
   let http = new XMLHttpRequest();
 
