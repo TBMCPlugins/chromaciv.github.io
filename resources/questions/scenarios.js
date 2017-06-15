@@ -2,7 +2,7 @@
 window.onload = function(){
   addScenario = function(scenario){
 
-    let $liElement = $("<li id=\"scenarios-${scenario.name}\"></li>")
+    let $liElement = $("<li id=\"scenarios-"+scenario.name+"\"></li>")
 
     if(scenario.adult == true){
       $adultText = $("<p class=\"adult\">(question for those over the age of 18... or those mature enough)</p>");
@@ -12,16 +12,15 @@ window.onload = function(){
 
     $options = $("<ul></ul>");
     for(option of scenario.options){
-      $options.append($("<li>" + option + "</li>"));
+      $options.append($("<li><input type=\"radio\" name=\"radio-"+scenario.name+"\">" + option + "</radio></li>"));
     }
     $question = $("<p>" + scenario.question + "</p>");
 
-    $input = $("<input type=\"text\" placeholder=\"Enter response here\">");
-
+    $textArea = $("<textArea placeholder=\"Enter response here\"></textArea>")
 
     $liElement.append($description);
     $liElement.append($options);
-    $liElement.append($input);
+    $liElement.append($textArea);
 
     $("#scenarios").append($liElement);
   }
