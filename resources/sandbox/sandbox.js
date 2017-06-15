@@ -1,63 +1,58 @@
-/* AJAX Tutorial, By The Net Ninja
-https://www.youtube.com/watch?v=h0ZUpPiV1ac
-*/
+//AJAX request method
+updateCell = function(path, pageType, requestType){
+  path = path.toLowerCase();
+  const $element = $("#hello-" + path);
+  $.ajax({
+    type: requestType, //GET or POST
+    url: "https://server.figytuna.com:8080/ali/hello/" + path,
+    timeout: 2000, //ms
+    beforeSend: function(data){
+      $element.html("<em>Loading...</em>");
+    },
+    success: function(data){
+      if (pageType == "html"){
+        $element.html($data);
+      }else{
+        $element.text($data);
+      }
+    },
+    error: function(e){
+      $("#hello-" + path).html("<em>Error " + e.status + " " + e.statusText + "</em>");
+    }
+  });
+}
 
 window.onload = function(){
-
-  const serverPath = "https://server.figytuna.com:8080/ali/hello/";
-  const pages = {
-    "unsafe": [
-      "World",
-      "Data",
-      "Post"
-    ],
-    "html":[
-      "Location",
-      "Players",
-    ]
+  const pageList = {
+    "unsafe": ["World", "Data", "Post"],
+    "html": ["Location", "Players"],
   }
-  //Generate HTML table
-  for (const pageType in pages){
-    for (const pagePath of pages[pageType]){
-      //Adds new table row based on the data request
-      const $newTableRow = $("<tr>"
-        + "<td>Hello " + pagePath + "</td>"
-        + "<td id=\"hello-"+ pagePath.toLowerCase() + "\"></td>"
-        + "</tr>");
 
-        console.log(pagePath + " added");
+  //Generate HTML table
+  for (const pageType in pageList){
+    for (const path of pageList[pageType]){
+      //Adds new table row based on the data request
+      const $row = $("<tr></tr>");
+      const $request = $("<td>Hello " + path + "</td>");
+      const $response = $("<td id=\"hello-"+ path.toLowerCase() + "\"></td>")
+
+      $row.append($request);
+      $row.append($response);
+
       //Appends new table row to table
-      $("#hello-table").append($newTableRow);
+      $("#hello-table").append($row);
     }
   }
-
-  dataRequest = function(pagePath, pageType, requestType){
-    $.ajax({
-      type: requestType,
-      url: serverPath + pagePath.toLowerCase(),
-      timeout: 2000,
-      beforeSend: function(data){
-        $("#hello-" + pagePath.toLowerCase()).html("<em>Loading...</em>");
-      },
-      success: function(data){
-        $element = $("#hello-" + pagePath.toLowerCase())
-        if (pageType == "html"){
-          $element.html($data);
-        }else{
-          $element.text($data);
-        }
-      },
-      error: function(e){
-        $("#hello-" + pagePath.toLowerCase()).html("<em>Error " + e.status + " " + e.statusText + "</em>");
-      }
-    });
-  }
-  //Gets Table data from server
-  for (const pagePath of pages["html"]){
-    dataRequest(pagePath, "safe", "GET");
+  //Populate Table Data
+  for (const id of pageList["html"]){
+    //Gets data from server, adds response to table
+    updateCell(id, "safe", "GET");
   }
 
-  for (const pagePath of pages["unsafe"]){
-    dataRequest(pagePath, "unsafe", "GET");
+  for (const id of pageList["unsafe"]){
+    //Gets data from server, adds response to table
+    updateCell(id, "unsafe", "GET");
   }
+
+
 }
