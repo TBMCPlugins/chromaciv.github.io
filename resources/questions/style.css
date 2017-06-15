@@ -1,8 +1,11 @@
-#scenarios li{
+li, li p{
   font-family: "Times New Roman";
 
 }
-.adult{
-  font-family: monospace;
+.aside{
+  color: rgb(250, 250, 250);
+}
+#scenarios li p.adult{
+  font-family: monospace  ;
   color: rgb(240, 0, 100);
 }
