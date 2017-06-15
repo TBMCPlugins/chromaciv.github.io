@@ -29,4 +29,7 @@ window.onload = function(){
     $("#scenarios").append($liElement);
   }
 
+  $.getJSON("./resources/questions/scenarios.json", function(data){
+    console.log(data);
+  });
 };
