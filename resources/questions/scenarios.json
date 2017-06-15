@@ -3,8 +3,7 @@
     {
       "name": "base raid",
       "description":
-        "You find your base raided: All of your stuff is missing, chests are empty.
-        What would be your first action?",
+        "You find your base raided: All of your stuff is missing, chests are empty. What would be your first action?",
       "options": [
         "Try to find who stole the goods, and try to get it back",
         "Go to the moderators, and report what happened",
@@ -18,7 +17,7 @@
     {
       "name": "Rule 1",
       "description":
-        "Someone is breaking Rule #1 and well... being a dick. They'are
+        "Someone is breaking Rule #1 and well... being a dick. They are
         angry about (having their base raided/being harrassed by another
         member/their family treating them unfairly/griefers destroying
         their base), and are swearing, insulting people, and generally
@@ -33,7 +32,7 @@
       ],
       "question":
         "If you were a moderator, what would you choose instead?",
-      "adult": false,
+      "adult": false
     },
     {
       "name": "Harrassment",
