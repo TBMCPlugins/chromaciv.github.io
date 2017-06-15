@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Questions</title>
+    <link rel="stylesheet" href="resources/global/style.css">
   </head>
   <body>
     <nav>
@@ -22,13 +23,26 @@
       into our community, we'd like to get to know you a bit better.
     </p>
     <ul>
-      <li>Where did you find our server?</li>
-      <li>What made you interested in this server?</li>
-      <li>Do you have Discord? What's your username?</li>
-      <li>Do you have a Reddit Account? If so, what's your username?</li>
-      <li>Have you heard of /r/thebutton? If so, have you participated in it? If so... when did ya press?</li>
-      <li>Have you heard of /r/joinrobin?</li>
-      <li>Have you heard of /r/place?</li>
+      <li>Name<br />
+      <input type="text" name="" value=""></li>
+      <li>Date of Birth<br ./>
+      <input type="date" name="" value=""></li>
+      <li>Gender<br ./>
+      <input type="date" name="" value=""></li>
+      <li>Where did you find our server?<br ./>
+      <input type="text" name="" value=""></li>
+      <li>What made you interested in us?<br ./>
+      <input type="text" name="" value=""></li>
+      <li>Do you have Discord? What's your username?<br ./>
+      <input type="text" name="" value=""></li>
+      <li>Do you have a Reddit Account? If so, what's your username?<br ./>
+      <input type="text" name="" value=""></li>
+      <li>Have you heard of /r/thebutton? If so, have you participated in it? If so... when did ya press?<br ./>
+      <input type="text" name="" value=""></li>
+      <li>Have you heard of /r/joinrobin?<br ./>
+      <input type="text" name="" value=""></li>
+      <li>Have you heard of /r/place?<br ./>
+      <input type="text" name="" value=""></li>
     </ul>
 
     <h2>What Questions</h2>
@@ -38,12 +52,11 @@
       of our rules.
     </p>
     <ul>
-      <li><em>If we can't make a list of questions about our rules without
-      going into too much detail and replacing common sense with pedantic shit,
+      <li><em>If we can't make a list of questions about our rules
       then we can put the actual ruleset in here</em></li>
-      <li><em>This should be a "common sense" check, to see
-      if applicants are paying attention to the questions at all.
-      Consider this Ghostise's secret word</em></li>
+      <li><em>This should be a "sanity" check, to see
+      if applicants are paying attention to the questions at all.</em></li>
+      <li><em>Consider this a basic filter</em></li>
     </ul>
 
     <h2>Why Questions</h2>
@@ -61,7 +74,7 @@
       choose the awnser.
     </p>
     <h3>Scenarios</h3>
-    <ul>
+    <ul id="scenarios">
       <li>
         You find your base raided: All of your stuff is missing, chests are empty.
         What would be your first action?
@@ -70,11 +83,13 @@
           <li>Go to the moderators, report what happened.</li>
           <li>Ignore it all, and try to gather resources to recover</li>
           <li>Question yourself... has your base really been raided?</li>
-          <li>Other...5</li>
+          <li>Other...</li>
         </ul>
         Why would you choose this action?
+        <br />
         <input type="text" name="" value="enter your response here">
       </li>
+      <br />
       <li>
         Someone is breaking Rule #1 and well... being a dick. They'are
         angry about (having their base raided/being harrassed by another
@@ -87,41 +102,45 @@
           <li>Go to the moderators, report what happened.</li>
           <li>Ignore them with /ignore, and continue playing your game</li>
           <li>See if there is some way distract them from their issue</li>
-          <li>Other...5</li>
+          <li>Other...</li>
         </ul>
         If you were a moderator, what would you choose instead? Why?
-        <input type="text" name="" value="enter your response here">
-        <li>
-          (questions for those over the age of 18... or those mature enough)
-          One of your friends is upset. Someone has been harrassing them,
-          asking for innapropriate pictures, constantly private messaging
-          them about sexual topics without their consent.
-          (<em>THEIR NAME IS FUCKING GIO</em>)
-          Your friend is visibly uncomfortable, what would be your first
-          action?
-          <ul>
-            <li>Try to listen to both sides, see what the other person has to say</li>
-            <li>Go to the moderators, and report what happened.</li>
-            <li>Try to cheer up your friend, diverting their attention to something else</li>
-            <li>Listen to your friend, and reccommend some advice</li>
-            <li>Other...5</li>
-          </ul>
-          If this situation is happening to you, what would you choose instead?
-          <input type="text" name="" value="enter your response here">
-      </li>
-    </ul>
-    <p>More scenarios to come...</p>
-    <p>
-      <em>
-        These scenarios should test the applicant's critical thinking.
-        It'd be interesting to see how new players respond to events
-        that happened on the server.
         <br />
-        New Scenarios are always welcome! If you have any ideas or
-        possible scenarios to ask new players, send a ping to a
-        developer or post to #feedback on Discord.
-      </em>
-    </p>
+        <input type="text" name="" value="enter your response here">
+      </li>
+      <br />
+      <li>
+        (questions for those over the age of 18... or those mature enough)
+        One of your friends is upset. Someone has been harrassing them,
+        asking for innapropriate pictures, constantly private messaging
+        them about sexual topics without their consent.
+        (<em>THEIR NAME IS FUCKING GIO</em>)
+        Your friend is visibly uncomfortable, what would be your first
+        action?
+        <ul>
+          <li>Try to listen to both sides, see what the other person has to say</li>
+          <li>Go to the moderators, and report what happened.</li>
+          <li>Try to cheer up your friend, diverting their attention to something else</li>
+          <li>Listen to your friend, and reccommend some advice</li>
+          <li>Other...</li>
+        </ul>
+        If this situation is happening to you, what would you choose instead?
+        <br />
+        <input type="text" name="" value="enter your response here">
+    </li>
+  </ul>
+  <p>More scenarios to come...</p>
+  <p>
+    <em>
+      These scenarios should test the applicant's critical thinking.
+      It'd be interesting to see how new players respond to events
+      that happened on the server.
+      <br />
+      New Scenarios are always welcome! If you have any ideas or
+      possible scenarios to ask new players, send a ping to a
+      developer or post to #feedback on Discord.
+    </em>
+  </p>
 
   </body>
 </html>
