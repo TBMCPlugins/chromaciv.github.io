@@ -1,7 +1,8 @@
 #scenarios li{
   font-family: "Times New Roman";
+
 }
-#redlike{
-  font-family: sans-serif;
+.adult{
+  font-family: monospace;
   color: rgb(240, 0, 100);
 }
