@@ -6,17 +6,17 @@ window.onload = function(){
 
   const serverPath = "https://server.figytuna.com:8080/ali/hello/";
   const pages = [
-    "world",
-    "data",
-    "players",
-    "location"
+    "World",
+    "Data",
+    "Players",
+    "Location"
   ]
   //Generate HTML table
-  for (pagePath in pages){
+  for (pagePath of pages){
     //Adds new table row based on the data request
     const $newTableRow = $("<tr>"
       + "<td>Hello " + pagePath + "</td>"
-      + "<td id=\"hello-"+ pagePath + "\"></td>"
+      + "<td id=\"hello-"+ pagePath.toLowerCase() + "\"></td>"
       + "</tr>");
 
     //Appends new table row to table
@@ -24,9 +24,9 @@ window.onload = function(){
   }
 
   //Gets Table data from server
-  for (pagePath in pages){
-    $.get(serverPath + pagePath, function(data){
-      document.getElementById("hello-" + pagePath).innerHTML = data;
+  for (pagePath of pages){
+    $.get(serverPath + pagePath.toLowerCase(), function(data){
+      document.getElementById("hello-" + pagePath.toLowerCase()).innerHTML = data;
     });
   }
 }
