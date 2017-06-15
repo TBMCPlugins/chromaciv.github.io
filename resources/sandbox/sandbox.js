@@ -12,7 +12,7 @@ window.onload = function(){
     "Location"
   ]
   //Generate HTML table
-  for (pagePath of pages){
+  for (const pagePath of pages){
     //Adds new table row based on the data request
     const $newTableRow = $("<tr>"
       + "<td>Hello " + pagePath + "</td>"
@@ -24,8 +24,9 @@ window.onload = function(){
   }
 
   //Gets Table data from server
-  for (pagePath of pages){
+  for (const pagePath of pages){
     $.get(serverPath + pagePath.toLowerCase(), function(data){
+      console.log(pagePath + "|" + data);
       document.getElementById("hello-" + pagePath.toLowerCase()).innerHTML = data;
     });
   }
