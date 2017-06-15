@@ -14,13 +14,24 @@ window.onload = function(){
     for(option of scenario.options){
       $options.append($("<li><input type=\"radio\" name=\"radio-"+scenario.name+"\">" + option + "</radio></li>"));
     }
-    $question = $("<p>" + scenario.question + "</p>");
+    if (scenario.other){
+      $options.append("<li>Other... <input type=text></li>");
+    }
 
-    $textArea = $("<textArea placeholder=\"Enter response here\"></textArea>")
+    $why = $("<p>Why would you choose this awnser?</p>");
+    $whyResponse = $("<textArea placeholder=\"Enter response here\"></textArea>")
 
     $liElement.append($description);
     $liElement.append($options);
-    $liElement.append($textArea);
+    $liElement.append($why);
+    $liElement.append($whyResponse);
+
+    if(scenario.question){
+      $question = $("<p>" + scenario.question + "</p>");
+      $questionResponse = $("<textArea placeholder=\"Enter response here\"></textArea>")
+      $liElement.append($question);
+      $liElement.append($questionResponse);
+    }
 
     $("#scenarios").append($liElement);
   }

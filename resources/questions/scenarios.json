@@ -8,11 +8,11 @@
         "Try to find who stole the goods, and try to get it back",
         "Go to the moderators, and report what happened",
         "Ignore it all, and try to gather resources to recover",
-        "Question yourself, has your base really been raided?",
-        "Other..."
+        "Question yourself, has your base really been raided?"
       ],
-      "question": "Why would you choose this action?",
-      "adult": false
+      "question": null,
+      "adult": false,
+      "other": true
     },
     {
       "name": "Rule 1",
@@ -22,12 +22,12 @@
         "Attempt to defuse the situation, listening to them",
         "Go to the moderators, report what happened",
         "See if there is some way to distract them from their issues",
-        "Ignore them with /ignore, and continue playing",
-        "Other..."
+        "Ignore them with /ignore, and continue playing"
       ],
       "question":
         "If you were a moderator, what would you choose instead?",
-      "adult": false
+      "adult": false,
+      "other": true
     },
     {
       "name": "Harrassment",
@@ -37,12 +37,12 @@
         "Try to listen to both sides, see what the other person has to say",
         "Go to the moderators, and report what happened",
         "Try to cheer up your friend, diverting their attention to something else",
-        "Listen to your friend, and reccommend some advice",
-        "Other..."
+        "Listen to your friend, and reccommend some advice"
       ],
       "question":
         "If this situation were happening to you, what option would you choose?",
-      "adult": true
+      "adult": true,
+      "other": true
     }
   ]
 }
