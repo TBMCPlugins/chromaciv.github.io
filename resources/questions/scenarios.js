@@ -1,44 +1,80 @@
 
 window.onload = function(){
-  addScenario = function(scenario){
+  makeScenario = function(scenario){
 
-    let $liElement = $("<li id=\"scenarios-"+scenario.name+"\"></li>")
+    //output element, that other elements are attached to
+    let $outputElement = $("<li></li>")
+    $outputElement.attr("id", "scenarios-"+scenario.name);
 
+    //Mature Content rating
     if(scenario.adult == true){
-      $adultText = $("<p class=\"adult\">(question for those over the age of 18... or those mature enough)</p>");
-      $liElement.append($adultText);
-    }
-    $description = $("<p>" + scenario.description +"</p>");
+      $adultText = $("<p>(question for those over the age of 18... or those mature enough)</p>");
+      $adultText.addClass("adult");
 
-    $options = $("<ul></ul>");
+      $outputElement.append($adultText);
+      $outputElement.addClass("adult-scenario");
+    }
+
+    //description
+    $descriptionElement = $("<p>" + scenario.description +"</p>");
+
+    //option list
+    $optionElement = $("<ul></ul>");
     for(option of scenario.options){
-      $options.append($("<li><input type=\"radio\" name=\"radio-"+scenario.name+"\">" + option + "</radio></li>"));
+      //Create radio button
+      $inputTag = $("<input>");
+      $inputTag.attr("type", "radio");
+      $inputTag.attr("name", "radio-"+scenario.name);
+
+      //Populate list element
+      $newOption = $("<li></li>");
+      $newOption.append($inputTag);
+      $newOption.append(option);
+      $optionElement.append($newOption);
+
     }
+    //Other Question
     if (scenario.other){
-      $options.append("<li>Other... <input type=text></li>");
+      $otherElement = $("<li>Other... <input type=text></li>");
+      $optionElement.append($otherElement);
     }
 
-    $why = $("<p>Why would you choose this awnser?</p>");
-    $whyResponse = $("<textArea placeholder=\"Enter response here\"></textArea>")
+    //Default question, always shows up
+    $whyElement = $("<p>Why would you choose this awnser?</p>");
 
-    $liElement.append($description);
-    $liElement.append($options);
-    $liElement.append($why);
-    $liElement.append($whyResponse);
+    //Awnser space for the default element
+    $whyResponseElement = $("<textArea></textArea>")
+    $whyResponseElement.attr("placeholder", "Enter response here");
 
+    //Populate outputElement
+    $outputElement.append($descriptionElement);
+    $outputElement.append($optionElement);
+    $outputElement.append($whyElement);
+    $outputElement.append($whyResponseElement);
+
+    //Extra Question
     if(scenario.question){
       $question = $("<p>" + scenario.question + "</p>");
-      $questionResponse = $("<textArea placeholder=\"Enter response here\"></textArea>")
-      $liElement.append($question);
-      $liElement.append($questionResponse);
+      $questionResponse = $("<textArea></textArea>");
+      $questionResponse.attr("placeholder", "Enter response here");
+
+      $outputElement.append($question);
+      $outputElement.append($questionResponse);
     }
 
-    $("#scenarios").append($liElement);
+    //Submission button
+    $submitElement = $("<input>");
+    $submitElement.attr("type", "submit");
+    $submitElement.append("Submit");
+    $outputElement.append($("<br /><br />"));
+    $outputElement.append($submitElement);
+
+    return $outputElement;
   }
 
   $.getJSON("./resources/questions/scenarios.json", "", function(data){
     for(const scenario of data.scenarios){
-      addScenario(scenario);
+      $("#scenarios").append(makeScenario(scenario));
     }
   });
 }
