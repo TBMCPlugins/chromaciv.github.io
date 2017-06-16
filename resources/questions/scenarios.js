@@ -3,9 +3,17 @@ window.onload = function(){
   makeScenario = function(scenario){
 
     //output element, that other elements are attached to
-    let $outputElement = $("<li></li>")
-    $outputElement.attr("id", "scenarios-"+scenario.name);
-
+    let $trueOutputElement = $("<li></li>")
+    $trueOutputElement.attr("id", "scenarios-"+scenario.name);
+    let $outputElement = $("<div class=\"accordion-panel\"></div>")
+    //Determines whether this is a jQuery Accordion
+    const isAccordion = true;
+    if(isAccordion){
+      $controlElement = $("<button></button>");
+      $controlElement.addClass("accordion-control");
+      $controlElement.append(scenario.name);
+      $trueOutputElement.append($controlElement);
+    }
     //Mature Content rating
     if(scenario.adult == true){
       $adultText = $("<p>(question for those over the age of 18... or those mature enough)</p>");
@@ -69,12 +77,24 @@ window.onload = function(){
     $outputElement.append($("<br /><br />"));
     $outputElement.append($submitElement);
 
-    return $outputElement;
+    $trueOutputElement.append($outputElement);
+    return $trueOutputElement;
   }
 
   $.getJSON("./resources/questions/scenarios.json", "", function(data){
+    $accordionElement = $("#scenarios");
+    $accordionElement.addClass("accordion")
     for(const scenario of data.scenarios){
-      $("#scenarios").append(makeScenario(scenario));
+      $accordionElement.append(makeScenario(scenario))
     }
+
+    $(".accordion").on('click', '.accordion-control', function(e){
+      e.preventDefault;
+      $(this)
+        .next('.accordion-panel')
+        .not(':animated')
+        .slideToggle();
+    });
   });
+
 }
