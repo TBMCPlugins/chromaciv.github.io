@@ -11,9 +11,9 @@ updateCell = function(path, pageType, requestType){
     },
     success: function(data){
       if (pageType == "html"){
-        $element.html($data);
+        $element.html(data);
       }else{
-        $element.text($data);
+        $element.text(data);
       }
     },
     error: function(e){
