@@ -2,45 +2,48 @@
 window.onload = function(){
   makeScenario = function(scenario){
 
-    //output element, that other elements are attached to
+    //Create output Element
     let $trueOutputElement = $("<li></li>")
     $trueOutputElement.attr("id", `scenarios-${scenario.name}`);
 
-
     let $outputElement = $("<div class=\"accordion-panel\"></div>")
-    //Determines whether this is a jQuery Accordion
+
+    //Create Control Element
     const isAccordion = true;
     if(isAccordion){
       $controlElement = $("<button></button>");
-      $controlElement.addClass("accordion-control");
-      $controlElement.append(scenario.name);
+        .addClass("accordion-control");
+        .append(scenario.name);
+
       $trueOutputElement.append($controlElement);
     }
+
     //Mature Content rating
     if(scenario.adult == true){
-      $adultText = $("<p>(question for those over the age of 18... or those mature enough)</p>");
-      $adultText.addClass("adult");
+      $adultText = $("<p>)</p>");
+        .addClass("adult");
+        .append(`(question for those over the age of 18... or those mature enough)`)
 
       $outputElement.append($adultText);
       $outputElement.addClass("adult-scenario");
     }
 
     //description
-    $descriptionElement = $("<p>" + scenario.description +"</p>");
+    $descriptionElement = $(`<p>${scenario.description}</p>`);
 
     //option list
     $optionElement = $("<ul></ul>");
     for(option of scenario.options){
       //Create radio button
-      $inputTag = $("<input>");
-      $inputTag.attr("type", "radio");
-      $inputTag.attr("name", `radio-${scenario.name}`);
+      $inputTag = $("<input>")
+        .attr("type", "radio")
+        .attr("name", `radio-${scenario.name}`);
 
       //Populate list element
-      $newOption = $("<li></li>");
-      $newOption.append($inputTag);
-      $newOption.append(option);
-      $optionElement.append($newOption);
+      $newOption = $("<li></li>")
+        .append($inputTag)
+        .append(option)
+        .append($newOption);
 
     }
     //Other Question
@@ -64,18 +67,19 @@ window.onload = function(){
 
     //Extra Question
     if(scenario.question){
-      $question = $("<p>" + scenario.question + "</p>");
-      $questionResponse = $("<textArea></textArea>");
-      $questionResponse.attr("placeholder", "Enter response here");
+      $question = $("<p>" + scenario.question + "</p>")
+        .append($("<textArea></textArea>")
+          .attr("placeholder", "Enter response here"));
 
       $outputElement.append($question);
       $outputElement.append($questionResponse);
     }
 
     //Submission button
-    $submitElement = $("<input>");
-    $submitElement.attr("type", "submit");
-    $submitElement.append("Submit");
+    $submitElement = $("<input>")
+      .attr("type", "submit")
+      .append("Submit");
+
     $outputElement.append($("<br /><br />"));
     $outputElement.append($submitElement);
 
