@@ -4,7 +4,9 @@ window.onload = function(){
 
     //output element, that other elements are attached to
     let $trueOutputElement = $("<li></li>")
-    $trueOutputElement.attr("id", "scenarios-"+scenario.name);
+    $trueOutputElement.attr("id", `scenarios-${scenario.name}`);
+
+
     let $outputElement = $("<div class=\"accordion-panel\"></div>")
     //Determines whether this is a jQuery Accordion
     const isAccordion = true;
@@ -32,7 +34,7 @@ window.onload = function(){
       //Create radio button
       $inputTag = $("<input>");
       $inputTag.attr("type", "radio");
-      $inputTag.attr("name", "radio-"+scenario.name);
+      $inputTag.attr("name", `radio-${scenario.name}`);
 
       //Populate list element
       $newOption = $("<li></li>");

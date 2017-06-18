@@ -1,58 +1,54 @@
 window.onload = function(){
-  function addRow(building){
+  const addRow = function(building){
     $nameElement = $("<td></td>")
-    $nameElement.attr("id", building.id + "-progress.name")
-    $nameElement.append(building.name);
+      .attr("id", `${building.id}-progress.name`)
+      .append(building.name);
 
-    $useElement = $("<td></td>");
-    $useElement.attr("id", building.id + "-progress.use");
-    $useElement.append(building.use)
+    $useElement = $("<td></td>")
+      .attr("id", `${building.id}-progress.use`)
+      .append(building.use)
 
-    $designedElement = $("<td></td>");
-    $designedElement.attr("id", building.id + "-progress.designed");
-    $designedElement.addClass("checkboxCell");
-    $designedElement.append(
-        $("<input>")
+    $designedElement = $("<td></td>")
+      .attr("id", `${building.id}-progress.designed`)
+      .addClass("checkboxCell")
+      .append($("<input>")
           .attr("type", "checkbox")
-          .attr("id", building.id + ".designed?")
-          .attr("checked", building.designed))f;
+          .attr("id", `${building.id}.designed?`)
+          .attr("checked", building.designed));
 
-    $startedElement = $("<td></td>");
-    $startedElement.attr("id", building.id + "-progress.stated");
-    $startedElement.addClass("checkboxCell");
-    $startedElement.append(
-        $("<input>")
+    $startedElement = $("<td></td>")
+      .attr("id", `${building.id}-progress.stated`)
+      .addClass("checkboxCell")
+      .append($("<input>")
           .attr("type", "checkbox")
-          .attr("id", building.id + ".started?")
+          .attr("id", `${building.id}.started?`)
           .attr("checked", building.started));
 
-    $completedElement = $("<td></td>");
-    $completedElement.attr("id", building.id + "-progress.completed");
-    $completedElement.addClass("checkboxCell");
-    $completedElement.append(
-      $("<input>")
+    $completedElement = $("<td></td>")
+      .attr("id", `${building.id}-progress.completed`)
+      .addClass("checkboxCell")
+      .append($("<input>")
         .attr("type", "checkbox")
-        .attr("id", building.id + ".completed?")
+        .attr("id", `${building.id}.completed?`)
         .attr("checked", building.completed));
 
-    $populatedElement = $("<td></td>");
-    $populatedElement.attr("id", building.id + "-progress.populated");
-    $populatedElement.addClass("checkboxCell");
-    $populatedElement.append(
-      $("<input>")
+    $populatedElement = $("<td></td>")
+      .attr("id", `${building.id}-progress.populated`)
+      .addClass("checkboxCell")
+      .append($("<input>")
         .attr("type", "checkbox")
-        .attr("id", building.id + ".populated?")
+        .attr("id", `${building.id}.populated?`)
         .attr("checked", building.populated));
 
 
-    $outputRow = $("<tr></tr>");
-    $outputRow.attr("id", building.id + "-progress");
-    $outputRow.append($nameElement);
-    $outputRow.append($useElement);
-    $outputRow.append($designedElement);
-    $outputRow.append($startedElement);
-    $outputRow.append($completedElement);
-    $outputRow.append($populatedElement);
+    $outputRow = $("<tr></tr>")
+      .attr("id", `${building.id}-progress`)
+      .append($nameElement)
+      .append($useElement)
+      .append($designedElement)
+      .append($startedElement)
+      .append($completedElement)
+      .append($populatedElement);
     return $outputRow;
   }
   console.info("loading");
