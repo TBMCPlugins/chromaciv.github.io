@@ -1,14 +1,43 @@
+html{
+  margin: 0 auto;
+  width: 600px;
+  background-color: lightgray;
+}
 li, li p{
   font-family: "Times New Roman";
 
 }
+h2 {
+  font-family: "Lucida Sans Unicode";
+  font-weight: lighter;
+  display: none;
+}
+h3{
+  font-family: Balthazar;
+  font-weight: bolder;
+  font-style: italic;
+  font-size: 30px;
+}
+p {
+  font-family: Georgia;
+  font-size: 17px;
+}
+
 .aside{
   color: rgb(250, 250, 250);
 }
 
+.footer-image-links{
+  display: block;
+  margin: 10px auto;
+  width: 400px;
+}
+.footer-image-links img{
+  padding: 5px;
+}
 
 #scenarios li p.adult{
-  font-family: monospace  ;
+  font-family: monospace;
   color: rgb(240, 0, 100);
 }
 

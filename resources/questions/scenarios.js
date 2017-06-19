@@ -6,7 +6,7 @@ window.onload = function(){
     let $trueOutputElement = $("<li></li>")
     $trueOutputElement.attr("id", `scenarios-${scenario.name}`);
 
-    let $outputElement = $("<div class=\"accordion-panel\"></div>")
+    let $outputElement = $("<div class=\"accordion-panel\"></div>");
 
     //Create Control Element
     const isAccordion = true;
