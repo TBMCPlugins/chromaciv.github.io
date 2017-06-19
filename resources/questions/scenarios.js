@@ -3,7 +3,7 @@ window.onload = function(){
   makeScenario = function(scenario){
 
     //Create output Element
-    let $trueOutputElement = $("<li></li>")
+    let $trueOutputElement = $("<li></li")
     $trueOutputElement.attr("id", `scenarios-${scenario.name}`);
 
     let $outputElement = $("<div class=\"accordion-panel\"></div>");
@@ -20,7 +20,7 @@ window.onload = function(){
 
     //Mature Content rating
     if(scenario.adult == true){
-      $adultText = $("<p>)</p>")
+      $adultText = $("<p></p>")
         .addClass("adult")
         .append(`(question for those over the age of 18... or those mature enough)`)
 
@@ -48,7 +48,11 @@ window.onload = function(){
     }
     //Other Question
     if (scenario.other){
-      $otherElement = $("<li>Other... <input type=text></li>");
+      $inputTag = $("<input>")
+            .attr("type", "radio")
+            .attr("name", `radio-${scenario.name}`);
+      $otherElement = $("<li>Other... <input type=text></li>")
+        .prepend($inputTag);
       $optionElement.append($otherElement);
     }
 
