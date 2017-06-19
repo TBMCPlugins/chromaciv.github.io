@@ -11,8 +11,8 @@ window.onload = function(){
     //Create Control Element
     const isAccordion = true;
     if(isAccordion){
-      $controlElement = $("<button></button>");
-        .addClass("accordion-control");
+      $controlElement = $("<button></button>")
+        .addClass("accordion-control")
         .append(scenario.name);
 
       $trueOutputElement.append($controlElement);
@@ -20,8 +20,8 @@ window.onload = function(){
 
     //Mature Content rating
     if(scenario.adult == true){
-      $adultText = $("<p>)</p>");
-        .addClass("adult");
+      $adultText = $("<p>)</p>")
+        .addClass("adult")
         .append(`(question for those over the age of 18... or those mature enough)`)
 
       $outputElement.append($adultText);
@@ -43,7 +43,7 @@ window.onload = function(){
       $newOption = $("<li></li>")
         .append($inputTag)
         .append(option)
-        .append($newOption);
+      $optionElement.append($newOption);
 
     }
     //Other Question
@@ -72,7 +72,6 @@ window.onload = function(){
           .attr("placeholder", "Enter response here"));
 
       $outputElement.append($question);
-      $outputElement.append($questionResponse);
     }
 
     //Submission button
