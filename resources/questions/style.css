@@ -3,10 +3,7 @@ html{
   width: 600px;
   background-color: lightgray;
 }
-li, li p{
-  font-family: "Times New Roman";
 
-}
 h2 {
   font-family: "Lucida Sans Unicode";
   font-weight: lighter;
@@ -21,6 +18,12 @@ h3{
 p {
   font-family: Georgia;
   font-size: 17px;
+}
+li{
+  list-style-type: none;
+}
+li, li p{
+  font-family: "Times New Roman";
 }
 
 .aside{
