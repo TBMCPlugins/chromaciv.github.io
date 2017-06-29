@@ -4,15 +4,15 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Javascript game</title>
+    <title>Civilization Map</title>
     <script src="./resources/frameworks/jquery-3.2.1.min.js" type="text/javascript"></script>
-    <script src="./resources/game/tutorial.js" type="text/javascript"></script>
-    <link rel="stylesheet" href="resources/global/style.css">
+    <link rel="stylesheet" href="resources/game/css/style.css">
 
     <!-- Leaflet Interactive Map -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css"
       integrity="sha512-07I2e+7D8p6he1SIM+1twR5TIrhUQn9+I6yjqD53JQjFiMf8EtC93ty0/5vJTZGF8aAocvHYNEDJajGdNx1IsQ=="
       crossorigin=""/>
+
     <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"
       integrity="sha512-A7vV8IFfih/D732iSSKi20u/ooOfj/AGehOKq0f4vLT1Zr2Y+RX7C+w8A1gaSasGtRUZpF/NZgzSAu4/Gc41Lg=="
       crossorigin=""></script>
@@ -21,12 +21,12 @@
     <nav>
       <a href="./index.html">Main</a>
       <a href="./sandbox.html">Sandbox</a>
-      <a href="./map.html">Game</a>
+      <a href="./map.html">Map</a>
       <a href="./rules.html">Rules</a>
       <a href="./questions.html">Questions</a>
       <a href="./spawn.html">Spawn</a>
     </nav>
-    <canvas id="myCanvas" width="640" height="480"
-      style="border: 1px solid gray; width: 640px; height: 480px"></canvas>
+
+    <img src="resources/game/images/biome_map_full_10.png" alt="" id="biome_map">
   </body>
 </html>
