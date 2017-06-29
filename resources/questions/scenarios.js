@@ -4,19 +4,17 @@ window.onload = function(){
 
     //Create output Element
     let $trueOutputElement = $("<li></li")
-    $trueOutputElement.attr("id", `scenarios-${scenario.name}`);
+      .attr("id", `scenarios-${scenario.name}`);
 
-    let $outputElement = $("<div class=\"accordion-panel\"></div>");
+    let $outputElement = $("<div></div>")
+      .addClass("accordion-panel");
 
-    //Create Control Element
-    const isAccordion = true;
-    if(isAccordion){
-      $controlElement = $("<button></button>")
-        .addClass("accordion-control")
-        .append(scenario.name);
+    $controlElement = $("<button></button>")
+      .addClass("accordion-control")
+      .append(scenario.name);
 
-      $trueOutputElement.append($controlElement);
-    }
+    $trueOutputElement.append($controlElement);
+
 
     //Mature Content rating
     if(scenario.adult == true){
@@ -29,7 +27,8 @@ window.onload = function(){
     }
 
     //description
-    $descriptionElement = $(`<p>${scenario.description}</p>`);
+    $descriptionElement = $(`<p></p>`)
+      .append(scenario.description);
 
     //option list
     $optionElement = $("<ul></ul>");
@@ -51,13 +50,15 @@ window.onload = function(){
       $inputTag = $("<input>")
             .attr("type", "radio")
             .attr("name", `radio-${scenario.name}`);
-      $otherElement = $("<li>Other... <input type=text></li>")
+      $otherElement = $("<li></li>")
         .prepend($inputTag);
+        .append("Other... <input type=text>")
       $optionElement.append($otherElement);
     }
 
     //Default question, always shows up
-    $whyElement = $("<p>Why would you choose this awnser?</p>");
+    $whyElement = $("<p></p>")
+      .append("Why would you choose this awnser?");
 
     //Awnser space for the default element
     $whyResponseElement = $("<textArea></textArea>")
