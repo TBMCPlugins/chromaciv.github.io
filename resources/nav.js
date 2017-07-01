@@ -1,4 +1,4 @@
-window.onload = function(){
+$("document").ready(function(){
 
   $("nav")
     .append($("<a></a>")
@@ -21,4 +21,4 @@ window.onload = function(){
       .attr("href", "./spawn.html"));
 
 
-}
+});

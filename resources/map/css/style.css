@@ -1,0 +1,9 @@
+#biome_map{
+  width: 100%;
+  height: auto;
+}
+
+#leaflet_map{
+  height: 400px;
+  width: 640px;
+}
