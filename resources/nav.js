@@ -18,7 +18,11 @@ $("document").ready(function(){
       .attr("href", "./questions.html"))
     .append($("<a></a>")
       .append("Spawn")
-      .attr("href", "./spawn.html"));
+      .attr("href", "./spawn.html"))
+    .append($("<a></a>")
+      .append("TicTac")
+      .attr("href", "./tictac.html"));
 
+    console.log("update");
 
 });
